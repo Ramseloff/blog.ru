@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" <head>
+<meta charset="UTF-8">
+<title>My blog</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row post-list">
+
+        </div>
+        <div class="row col-12">
+            <div>
+                <div class="form-group">
+                    <label for="title">Заголовок статьи</label>
+                    <input type="text" class="form-control" id="title" aria-describedby="titleHelp">
+                </div>
+                <div class="form-group">
+                    <label for="content">Содержание статьи</label>
+                    <textarea class="form-control" id="content"></textarea>
+                    <!-- <input type="text" class="form-control" id="inputContent" aria-describedby="contentHelp"> -->
+                </div>
+                <button class="btn btn-primary" onclick="addArticle()">Добавить статью</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
