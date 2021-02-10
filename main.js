@@ -101,30 +101,16 @@ async function addArticle() {
 async function getArticlesTag() {
     function getCheckedCheckBoxes() {
         var checkboxes = document.getElementsByClassName('check');
-        var checkboxesChecked = []; // можно в массиве их хранить, если нужно использовать 
         var tag = '';
         for (var index = 0; index < checkboxes.length; index++) {
             if (checkboxes[index].checked) {
-                checkboxesChecked.push(checkboxes[index].value); // положим в массив выбранный
                 tag += checkboxes[index].value + '&';
                 // console.log(tag);
             }
         }
-        return tag; // для использования в нужном месте
+        return tag;
     }
     let tag = getCheckedCheckBoxes();
-    //let tags = new CheckboxCollection();
-    /*const tag1 = document.getElementById('tag1').value;
-    const tag2 = document.getElementById('tag2').value;
-    const tag3 = document.getElementById('tag3').value;*/
-   /* tags.checkboxes.push(tag1);
-    tags.checkboxes.push(tag2);
-    tags.checkboxes.push(tag3);
-    console.log(tags);
-    tags = JSON.stringify(tags);
-    console.log(tags);*/
-    //let tag = tag1 + '&' + tag2 + '&' + tag3;
-
     console.log(tag);
 
     if (tag === '') {
