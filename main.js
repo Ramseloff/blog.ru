@@ -1,22 +1,3 @@
-/*function CheckboxCollection(checkboxes) {
-    this.checkboxes = checkboxes ? "nodeType" in checkboxes ? [checkboxes] : Array.prototype.slice.call(checkboxes) : [];
-}
-
-
-CheckboxCollection.prototype.collectValues = function () {
-    var i = this.checkboxes.length, buffer = [];
-    while (i--) {
-        if (this.checkboxes[i].checked) {
-            buffer.push(this.checkboxes[i].value);
-        }
-    }
-    return buffer;
-};
-
-
-
-*/
-
 async function getArticles() {
     let res = await fetch('http://localhost:8082/api.blog.ru/articles');
     let articles = await res.json();
@@ -104,10 +85,11 @@ async function getArticlesTag() {
         var tag = '';
         for (var index = 0; index < checkboxes.length; index++) {
             if (checkboxes[index].checked) {
-                tag += checkboxes[index].value + '&';
+                tag += checkboxes[index].value + '$';
                 // console.log(tag);
             }
         }
+        tag = tag.slice(0, -1);
         return tag;
     }
     let tag = getCheckedCheckBoxes();
@@ -116,9 +98,8 @@ async function getArticlesTag() {
     if (tag === '') {
         await getArticles();
     } else {
-       
         let url = 'http://localhost:8082/api.blog.ru/articles/tag/' + tag;
-        // console.log(url);
+        console.log(url);
         let res = await fetch(url);
         let articles = await res.json();
 
